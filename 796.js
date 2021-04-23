@@ -1,0 +1,2 @@
+(self.webpackChunkmy_webpack_project=self.webpackChunkmy_webpack_project||[]).push([[796],{796:(e,t,c)=>{"use strict";c.r(t),c.d(t,{default:()=>a});var n=c(466),u=function(){return n.createElement("div",null,n.createElement("h1",null,"About page"))};const a=(0,n.memo)(u)}}]);
+//# sourceMappingURL=796.js.map
