@@ -6,9 +6,8 @@
   "author": "Rubens Pinheiro Gonçalves Cavalcante",
   "license": "MIT",
   "description": "My webpack project",
-  "module": "",
   "scripts": {
-    "prebuild": "yarn babel-node setup.mjs",
+    "prebuild": "yarn babel setup.mjs -o setup.comp.js && yarn node setup.comp.js",
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production",
@@ -29,6 +28,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/cli": "^7.13.16",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
