@@ -11,7 +11,7 @@ module.exports = () => ({
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: isProd ? 'spa-fcp-speedup/' : '/',
+        publicPath: isProd ? '/spa-fcp-speedup/' : '/',
     },
     devServer: {
         hot: true,

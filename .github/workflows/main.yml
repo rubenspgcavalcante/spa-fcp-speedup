@@ -15,7 +15,6 @@ jobs:
       - name: Install, Setup and Build 🔧
         run: |
           yarn
-          yarn prebuild
           yarn build
 
       - name: Deploy 🚀
