@@ -7,7 +7,7 @@
   "license": "MIT",
   "description": "My webpack project",
   "scripts": {
-    "prebuild": "yarn babel setup.mjs -o setup.comp.js && yarn node setup.comp.js",
+    "prebuild": "yarn babel setup.mjs -o setup.comp.js && yarn babel-node setup.comp.js",
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production",
