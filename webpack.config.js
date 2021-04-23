@@ -2,13 +2,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    mode: 'development',
+const mode = process.env.NODE_ENV;
+const isProd = mode === 'production';
+
+module.exports = () => ({
+    mode,
     entry: './src/index.jsx',
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
+        publicPath: isProd ? 'spa-fcp-speedup/' : '/',
     },
     devServer: {
         hot: true,
@@ -43,4 +46,4 @@ module.exports = {
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
-};
+});

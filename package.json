@@ -7,12 +7,10 @@
   "license": "MIT",
   "description": "My webpack project",
   "scripts": {
-    "prebuild": "yarn babel setup.mjs -o setup.comp.js && yarn babel-node setup.comp.js",
-    "build": "webpack --mode=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production",
-    "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "prebuild": "yarn babel-node setup.jsx",
+    "build": "NODE_ENV=production webpack",
+    "build:dev": "NODE_ENV=development webpack",
+    "serve": "NODE_ENV=development webpack serve"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
