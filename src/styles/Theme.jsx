@@ -4,7 +4,10 @@ import { memo } from 'react';
 
 const theme = {
   colors: {
-    primary: '#1F2A38'
+    primary: '#1F2A38',
+    secondary: '#35465c',
+    tertiary: '#F3F4F6',
+    quartenary: '#fff',
   },
   background: {
     primary: '#fff',

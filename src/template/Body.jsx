@@ -2,15 +2,16 @@ import React, { memo, useContext } from 'react';
 import styled from '@emotion/styled';
 import RoutesContext from '../contexts/RoutesContext';
 
-const BodyContainer = styled.div`
+const BodyContainer = styled.section`
   padding-top: ${({ theme }) => theme.sizes.header}px;
   display: flex;
+  flex:  1 1 auto;
   flex-flow: column;
-  height: 100%;
 `
-const BodyContent = styled.section`
+const BodyContent = styled.div`
   background-color: ${({ theme }) => theme.background.secondary};
   padding: 16px 16px 32px 32px;
+  height: 100%;
 `;
 
 const TitleBar = styled.div`

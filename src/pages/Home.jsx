@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import styled from '@emotion/styled';
-import { Card } from '../template/Card';
+import { Card } from '../commons/components/Card';
 
 const Title = styled.h2`
   margin: 0;

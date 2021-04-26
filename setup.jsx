@@ -1,20 +1,33 @@
+import { resolve } from 'path';
+import { promises as fs } from 'fs';
 import React from 'react';
 import { renderToString } from 'react-dom/server.node';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { compile } from 'handlebars';
-import App from './src/App';
 import { RoutesProvider } from './src/contexts/RoutesContext';
-import { promises as fs } from 'fs';
-import { resolve } from 'path';
+import Theme from './src/styles/Theme';
+import Template from './src/template';
+import LoadingDots from './src/commons/components/LoadingDots'
+import routes from './src/pages/routes';
+import Reset from './src/styles/Reset';
+import Typebase from './src/styles/Typebase';
 
 (async () => {
   const preRender = renderToString(
-    <RoutesProvider value={[]}>
-      <Router history={createMemoryHistory()}>
-        <App />
-      </Router>
-    </RoutesProvider>
+    <>
+      <Reset />
+      <Typebase />
+      <RoutesProvider value={routes}>
+        <Router history={createMemoryHistory()}>
+          <Theme>
+            <Template >
+              <LoadingDots />
+            </Template>
+          </Theme>
+        </Router>
+      </RoutesProvider>
+    </>
   );
 
   try {
