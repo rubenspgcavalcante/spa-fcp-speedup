@@ -2,6 +2,7 @@ import React, { useContext, memo } from 'react';
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import RoutesContext from '../contexts/RoutesContext';
+import config from '../config';
 
 const StickHeader = styled.header`
   position: fixed;
@@ -50,7 +51,7 @@ const Header = () => {
       <HeaderBar>
         <LinksContainer>
           {routes?.map(({ title, path, exact }) => (
-            <PageLink activeClassName="selected" key={title} to={path} exact={exact}>{title}</PageLink>
+            <PageLink activeClassName="selected" key={title} to={`${config.publicPath}${path}`} exact={exact}>{title}</PageLink>
           ))}
         </LinksContainer>
       </HeaderBar>

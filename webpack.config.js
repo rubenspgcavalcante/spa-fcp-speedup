@@ -1,6 +1,7 @@
 // Generated using webpack-cli http://github.com/webpack-cli
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const mode = process.env.NODE_ENV;
 const isProd = mode === 'production';
@@ -27,9 +28,11 @@ module.exports = () => ({
         new HtmlWebpackPlugin({
             template: './dist/index.html',
         }),
-
-        // Add your plugins here
-        // Learn more obout plugins from https://webpack.js.org/configuration/plugins/
+        new CopyPlugin({
+            patterns: [
+                { from: ".github/gh-pages/*", to: "[name][ext]" },
+            ],
+        }),
     ],
     module: {
         rules: [

@@ -7,7 +7,7 @@
   "license": "MIT",
   "description": "My webpack project",
   "scripts": {
-    "prebuild": "yarn babel-node setup.jsx",
+    "prebuild": "rm -rf dist/ && yarn babel-node setup.jsx",
     "build": "NODE_ENV=production webpack",
     "build:dev": "NODE_ENV=development webpack",
     "serve": "NODE_ENV=development webpack serve"
@@ -19,6 +19,7 @@
     "@babel/preset-react": "^7.13.13",
     "@webpack-cli/generators": "^2.0.0",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
     "handlebars": "^4.7.7",
     "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.35.0",
